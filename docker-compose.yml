@@ -1,0 +1,32 @@
+# current image and mysql image
+
+services:
+  db:
+    image: mysql
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: app
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: test
+      DB_PASS: test

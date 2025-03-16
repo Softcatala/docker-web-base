@@ -1,0 +1,3 @@
+#!/command/execlineb -P
+with-contenv
+php-fpm8.4 --nodaemonize --fpm-config /etc/php-fpm84/php-fpm.conf
