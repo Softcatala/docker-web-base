@@ -1,4 +1,4 @@
-FROM debian:trixie
+FROM debian:trixie-slim
 
 ARG S6_OVERLAY_VERSION=3.2.0.2
 
@@ -8,10 +8,10 @@ RUN apt-get update && \
         unzip \
         curl \
         zip \
-		less \
+	less \
         bash \
-		vim \
-		wget \
+	vim \
+	wget \
         webp \
         libavif-bin \
         nginx \
