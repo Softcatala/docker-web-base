@@ -4,7 +4,7 @@ ARG S6_OVERLAY_VERSION=3.2.0.2
 
 
 RUN apt-get update && \
-    apt-get install -y ghostscript xz-utils \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y ghostscript xz-utils \
         unzip \
         curl \
         zip \
